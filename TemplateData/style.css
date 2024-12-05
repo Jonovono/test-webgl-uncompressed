@@ -1,0 +1,257 @@
+body, html
+{
+    padding: 0;
+    margin: 0;
+    user-select: none;
+    outline: none;
+}
+
+#container
+{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background: #0b43d1 no-repeat center;
+}
+
+#loading-container
+{
+    width: 100%;
+    height: 100%;
+}
+
+#game-canvas
+{
+    position: absolute;
+    aspect-ratio: auto 16 / 9;
+    width: 100%;
+    height: 100%;
+    background-color:#0b43d1;
+    image-rendering: pixelated;
+    outline: none;
+}
+
+#pattern-overlay
+{
+    width: 100%;
+    height: 100%;
+    background: url('star-pattern.png');
+    opacity: 5%;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    animation: scroll-bg 6s linear infinite;
+}
+
+#loading-bar
+{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    /*display: none*/
+}
+
+#radial-glow
+{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-image: radial-gradient(circle, rgba(52, 180, 249, 1.0) 15%, rgba(11, 67, 209, 0.0) 60%);
+}
+
+#logo
+{
+    width: 292px;
+    height: 157px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 48px;
+    background: url('mini-party-logo.svg') no-repeat center;
+    background-size: contain;
+    animation: scale-inout 5s ease infinite;
+}
+
+#flex-bottom{
+    display: flex;
+    width: 100%;
+    height: 100%;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: end;
+}
+
+#loading-text
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: right;
+    align-items: center;
+    margin: 25px;
+    height: 40px;
+}
+
+#loading-text-element
+{
+    width: 120px;
+    height: unset;
+    aspect-ratio: 5 / 1;
+    margin-left: 12px;
+    background: url('loading-text-03.png') no-repeat center;
+    background-size: contain;
+    animation: loading-text 2s ease-in-out infinite;
+}
+
+#loading-icons
+{
+    display: flex;
+    flex-direction: row;
+    width: auto;
+    height: 100%;
+}
+
+#loading-icon-1
+{
+    width: 24px;
+    height: unset;
+    aspect-ratio: 1 / 1;
+    background: url('icon-gear.svg') no-repeat center;
+    background-size: contain;
+}
+
+#loading-icon-2
+{
+    width: 16px;
+    height: unset;
+    aspect-ratio: 1 / 1;
+    align-self: end;
+    margin-left: -4px;
+    background: url('icon-gear.svg') no-repeat center;
+    background-size: contain;
+}
+
+#progress-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1em;
+}
+
+#progress-bar-empty
+{
+    width: 208px;
+    height: unset;
+    aspect-ratio: 52 / 6;
+    background: url('progress-bar-empty-dark.svg') no-repeat center;
+    background-size: contain;
+
+}
+#progress-bar-full
+{
+    width: 0%;
+    height: 100%;
+    background: url('progress-bar-full-dark.svg') no-repeat left;
+    background-size: cover;
+}
+
+#progress-runner {
+    width:150px;
+    height: auto;
+    aspect-ratio: 1/1;
+    background: url('run.gif') no-repeat center;
+    background-size: contain;
+    opacity: 40%;
+}
+
+#warning
+{
+    position: absolute;
+    left: 50%;
+    top: 5%;
+    transform: translate(-50%);
+    background: white;
+    padding: 10px;
+    display: none
+}
+
+/* Animation */
+
+@keyframes scroll-bg {
+    0%{
+        background-position: 0 0;
+        opacity: 5%;
+    }
+    50%{
+        opacity: 2%;
+    }
+    100%{
+        background-position: 100px 100px;
+        opacity: 5%;
+    }
+}
+
+@keyframes scale-inout {
+    0%{
+        transform: scale(1);
+    }
+    5%{
+        transform: scale(1.1);
+    }
+    10%{
+        transform: scale(1);
+    }
+    50%{
+        transform: scale(1);
+    }
+    100%{
+        transform: scale(1);
+    }
+}
+
+@keyframes loading-text {
+    0%{
+        opacity: 100%;
+        background-image: url('loading-text-03.png');
+    }
+    25%{
+        background-image: url('loading-text-01.png');
+    }
+    50%{
+        opacity: 60%;
+        background-image: url('loading-text-02.png');
+    }
+    100%{
+        opacity: 100%;
+        background-image: url('loading-text-03.png');
+    }
+}
+
+@keyframes spin-clockwise {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes spin-counterclockwise {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(-360deg);
+    }
+}
+
+.rotate-clockwise {
+    animation: spin-clockwise 5s linear infinite;
+}
+
+.rotate-counterclockwise {
+    animation: spin-counterclockwise 5s linear infinite;
+}

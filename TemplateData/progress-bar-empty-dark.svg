@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 432 46">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #002876;
+      }
+    </style>
+  </defs>
+  <!-- Generator: Adobe Illustrator 28.6.0, SVG Export Plug-In . SVG Version: 1.2.0 Build 709)  -->
+  <g>
+    <g id="LoadingBar">
+      <path id="Shadow" d="M411,4H21C9.42,4,0,13.42,0,25s9.42,21,21,21h390c11.58,0,21-9.42,21-21s-9.42-21-21-21Z"/>
+      <path id="Bar" class="cls-1" d="M426,21c0,8.28-6.72,15-15,15H21c-8.28,0-15-6.72-15-15s6.72-15,15-15h390c8.28,0,15,6.72,15,15Z"/>
+      <path id="Outline" d="M411,0H21C9.42,0,0,9.42,0,21s9.42,21,21,21h390c11.58,0,21-9.42,21-21S422.58,0,411,0ZM411,36H21c-8.28,0-15-6.72-15-15s6.72-15,15-15h390c8.28,0,15,6.72,15,15s-6.72,15-15,15Z"/>
+    </g>
+  </g>
+</svg>
