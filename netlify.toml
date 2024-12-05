@@ -1,0 +1,92 @@
+# netlify.toml
+
+[build]
+  publish = "island"  # Adjust this if your publish directory is different
+
+# Cache JavaScript files in island/Build/
+[[headers]]
+  for = "/Build/*.js"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+# Cache WebAssembly files in island/Build/
+[[headers]]
+  for = "/Build/*.wasm"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+# Cache Data files in island/Build/
+[[headers]]
+  for = "/Build/*.data"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+# Cache Loader JavaScript files in island/Build/
+[[headers]]
+  for = "/Build/*.loader.js"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+# Cache Framework JavaScript files in island/Build/
+[[headers]]
+  for = "/Build/*.framework.js"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+# Cache .bundle files in assets/WebGL/
+[[headers]]
+  for = "/assets/WebGL/*.bundle"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+# Cache compressed Brotli files in island/Build/
+[[headers]]
+  for = "/Build/*.br"
+  [headers.values]
+    Content-Encoding = "br"
+    Cache-Control = "public, max-age=31536000, immutable"
+
+# Cache compressed Gzip files in island/Build/
+[[headers]]
+  for = "/Build/*.gz"
+  [headers.values]
+    Content-Encoding = "gzip"
+    Cache-Control = "public, max-age=31536000, immutable"
+
+# Cache compressed Brotli files in assets/WebGL/
+[[headers]]
+  for = "/assets/WebGL/*.br"
+  [headers.values]
+    Content-Encoding = "br"
+    Cache-Control = "public, max-age=31536000, immutable"
+
+# Cache compressed Gzip files in assets/WebGL/
+[[headers]]
+  for = "/assets/WebGL/*.gz"
+  [headers.values]
+    Content-Encoding = "gzip"
+    Cache-Control = "public, max-age=31536000, immutable"
+
+# Do not cache HTML files to ensure users always get the latest version
+[[headers]]
+  for = "/index.html"
+  [headers.values]
+    Cache-Control = "no-cache, no-store, must-revalidate"
+
+# Do not cache manifest files if present
+[[headers]]
+  for = "/manifest.json"
+  [headers.values]
+    Cache-Control = "no-cache, no-store, must-revalidate"
+
+# Cache static assets in TemplateData
+[[headers]]
+  for = "/TemplateData/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+# Allow cross-origin requests if needed
+[[headers]]
+  for = "/*"
+  [headers.values]
+    Access-Control-Allow-Origin = "*"
